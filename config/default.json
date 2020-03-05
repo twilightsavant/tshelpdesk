@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://pat123:pat123@helpdesk-r0rfn.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mylittlepony"
+}
