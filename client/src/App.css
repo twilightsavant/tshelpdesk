@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
 /* Set 100% so modal background fills the whole screen */
 body {
   height: 100%;
@@ -84,8 +92,14 @@ body {
 .color_white {
   color: white;
 }
-.color_yellow {
-  color: yellow;
+.color_blue {
+  color: blue;
+}
+.color_green {
+  color: green;
+}
+.color_red {
+  color: red;
 }
 
 .boldNO {
@@ -146,12 +160,67 @@ body {
 .font32 {
   font-size: 32px;
 }
+.font34 {
+  font-size: 34px;
+}
 .font40 {
   font-size: 40px;
+}
+.font46 {
+  font-size: 46px;
 }
 
 .displayNone {
   display: none;
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+  position: fixed;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.btn-success,
+.bg-success,
+.badge-success,
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
 }
 
 .centerContainer {
@@ -315,4 +384,25 @@ body {
   animation-name: fadeInBottom;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+}
+
+.blinking {
+  animation: blinkingText 1.2s infinite;
+}
+@keyframes blinkingText {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

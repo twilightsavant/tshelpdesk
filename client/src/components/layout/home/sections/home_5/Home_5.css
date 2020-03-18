@@ -1,0 +1,33 @@
+.h_sec_5 {
+  text-align: center;
+  padding: 40px 0px 0px 0px;
+  font-size: 13px;
+}
+
+.h_sec_5 h1 {
+  margin-bottom: 40px;
+  font-style: italic;
+}
+.h_sec_5 h2 {
+  margin-bottom: 10px;
+}
+.h_sec_5 .employees {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.h_sec_5 .emp {
+  flex: 1 1;
+  margin-bottom: 40px;
+}
+.h_sec_5 img {
+  max-width: 300px;
+}
+
+.h_sec_5 .preAnim {
+  opacity: 0;
+}
+.h_sec_5 .postAnim {
+  opacity: 1;
+  transition-duration: 2s;
+}

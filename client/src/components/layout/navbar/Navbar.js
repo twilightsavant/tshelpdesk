@@ -1,13 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
+//import layout stuff
 import './Navbar.css';
+import NavBarLinks from './NavBar_Links';
+import nav_logo from './nav_logo.png';
+import NavDrawerBtn from '../navDrawerBtn/NavDrawerBtn';
 
-const Navbar = props => {
-  return <div className='navbar'></div>;
+//get actions
+import { openNavBar } from '../../../actions/navbar';
+
+const Navbar = ({ openNavBar }) => {
+  return (
+    <div className='headerPlaceHolder'>
+      <header>
+        <div className='centerContainer color_main font14'>
+          <div className='navBar'>
+            <div className='logo'>
+              <img src={nav_logo} alt='Help Desk' />
+            </div>
+            <div className='drawerNav'>
+              <NavDrawerBtn click={e => openNavBar()} />
+            </div>
+            <NavBarLinks />
+          </div>
+        </div>
+      </header>
+    </div>
+  );
 };
 
-Navbar.propTypes = {};
+Navbar.propTypes = {
+  openNavBar: PropTypes.func.isRequired
+};
 
-export default Navbar;
+const mapStateToProps = state => ({
+  navbar: state.navbar
+});
+
+export default connect(mapStateToProps, { openNavBar })(Navbar);

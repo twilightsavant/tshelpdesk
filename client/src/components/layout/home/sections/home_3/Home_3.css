@@ -1,0 +1,114 @@
+.h_sec_3 {
+  width: 100%;
+  overflow: hidden;
+}
+.h_sec_3 .preFadeIn {
+  opacity: 0;
+}
+.h_sec_3 .postFadeIn {
+  opacity: 1;
+  transition: opacity 3s;
+}
+
+.h_sec_3 .bgDiv {
+  background: url('./bgPic.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 350px auto;
+  padding-bottom: 350px;
+}
+
+.h_sec_3 .content {
+  text-align: left;
+  padding: 45px 20px;
+  align-self: center;
+}
+
+.h_sec_3 h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin: 0px 0px 0px 0px;
+}
+.h_sec_3 h2 {
+  margin: 5px 0px 20px 0px;
+  font-size: 32px;
+  font-weight: bolder;
+}
+.h_sec_3 h3 {
+  margin: 0px 0px 40px 0px;
+  font-weight: normal;
+  font-size: 14px;
+}
+.h_sec_3 .rndDis {
+  display: flex;
+  margin-top: 20px;
+}
+.h_sec_3 .rndDisNum {
+  border-radius: 50%;
+  background: #c1c9d5;
+  padding: 10px;
+  font-size: 33px;
+  font-weight: bolder;
+  color: white;
+  margin-right: 20px;
+}
+.h_sec_3 .rndDisDesc {
+  font-weight: bolder;
+  align-self: center;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 576px) {
+  .h_sec_3 {
+    background: url('./bgPic_clipped.jpg') no-repeat bottom right;
+  }
+  .h_sec_3 .bgDiv {
+    background: none;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 0px;
+  }
+  .h_sec_3 .content {
+    text-align: left;
+    padding: 45px 0px;
+    align-self: center;
+    flex: 0 0 70%;
+  }
+}
+@media (min-width: 768px) {
+  .h_sec_3 {
+    background: none;
+  }
+  .h_sec_3 .bgDiv {
+    background: url('./bgPic.jpg');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 320px auto;
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .h_sec_3 .content {
+    text-align: left;
+    padding: 0px 0px;
+    align-self: center;
+    flex: 0 0 60%;
+  }
+}
+@media (min-width: 992px) {
+  .h_sec_3 .bgDiv {
+    background-size: auto;
+    height: 670px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .h_sec_3 .content {
+    padding: 45px 0px;
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1200px) {
+}

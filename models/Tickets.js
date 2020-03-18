@@ -15,7 +15,7 @@ const TicketsSchema = new mongoose.Schema({
     required: true
   },
   createdDate: { type: Date, default: Date.now },
-  lastActivity: { type: Date },
+  lastActivity: { type: Date, default: Date.now },
   topic: { type: String },
   priority: { type: Number },
   answered: { type: Boolean },

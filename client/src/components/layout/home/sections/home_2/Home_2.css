@@ -1,0 +1,84 @@
+.h_sec_2 {
+  width: 100%;
+  background: rgb(193, 201, 213);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(193, 201, 213, 1) 0%,
+    rgba(244, 246, 249, 1) 50%,
+    rgba(193, 201, 213, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(193, 201, 213, 1) 0%,
+    rgba(244, 246, 249, 1) 50%,
+    rgba(193, 201, 213, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(193, 201, 213, 1) 0%,
+    rgba(244, 246, 249, 1) 50%,
+    rgba(193, 201, 213, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c1c9d5",endColorstr="#c1c9d5",GradientType=1);
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}
+
+.h_sec_2 .bgDiv {
+  height: 100%;
+  background-image: url('./bgPic.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 440px auto;
+}
+
+.h_sec_2 .content {
+  color: black;
+  padding-top: 260px;
+  padding-bottom: 60px;
+}
+.h_sec_2 .content > div {
+  align-self: center;
+  padding-right: 0px;
+  text-align: center;
+}
+.h_sec_2 h1 {
+  color: #5c6066;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  .h_sec_2 .content {
+    height: 166px;
+    padding: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .h_sec_2 .content > div {
+    flex: 0 1 400px;
+    padding-right: 0%;
+  }
+  .h_sec_2 .bgDiv {
+    background-size: 300px auto;
+    background-position: left top;
+  }
+}
+@media (min-width: 992px) {
+  .h_sec_2 .content {
+    height: 266px;
+  }
+  .h_sec_2 .content > div {
+    flex: 0 1 400px;
+    padding-right: 5%;
+  }
+  .h_sec_2 .bgDiv {
+    background-size: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .h_sec_2 .content > div {
+    flex: 0 1 520px;
+    padding-right: 10%;
+  }
+}

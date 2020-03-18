@@ -1,0 +1,135 @@
+.h_sec_4 {
+  width: 100%;
+  background: #ebeef1;
+}
+.h_sec_4 .centerContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 25% 25% 25%;
+  padding: 0px;
+}
+.h_sec_4 .preAnim {
+  opacity: 0;
+}
+.h_sec_4 .postAnim1,
+.h_sec_4 .postAnim2,
+.h_sec_4 .postAnim3,
+.h_sec_4 .postAnim4 {
+  opacity: 1;
+  transition-duration: 2s;
+}
+
+.h_sec_4 .postAnim1 {
+  transition-delay: 0.5s;
+}
+.h_sec_4 .postAnim2 {
+  transition-delay: 1.5s;
+}
+.h_sec_4 .postAnim3 {
+  transition-delay: 2s;
+}
+.h_sec_4 .postAnim4 {
+  transition-delay: 1s;
+}
+
+/* Tile Background Pics */
+.h_sec_4 .b {
+  background: url('./1.jpg') top left no-repeat;
+  background-size: cover;
+}
+.h_sec_4 .d {
+  background: url('./2.jpg') top left no-repeat;
+  background-size: cover;
+}
+.h_sec_4 .e {
+  background: url('./3.jpg') top left no-repeat;
+  background-size: cover;
+}
+.h_sec_4 .g {
+  background: url('./4.jpg') top left no-repeat;
+  background-size: cover;
+}
+
+.h_sec_4 .txt {
+  display: flex;
+}
+.h_sec_4 .txt div {
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  align-self: center;
+  flex: 1 1;
+  color: #555555;
+}
+.h_sec_4 .pic {
+  height: 305px;
+}
+
+.h_sec_1 .imgBorder {
+}
+.h_sec_4 i {
+  border-bottom: 1px solid #555555;
+}
+.h_sec_4 .a {
+  order: 1;
+}
+.h_sec_4 .b {
+  order: 2;
+}
+.h_sec_4 .c {
+  order: 4;
+}
+.h_sec_4 .d {
+  order: 3;
+}
+.h_sec_4 .e {
+  order: 6;
+}
+.h_sec_4 .f {
+  order: 5;
+}
+.h_sec_4 .g {
+  order: 7;
+}
+.h_sec_4 .h {
+  order: 8;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+  .h_sec_4 .centerContainer {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    padding: 0px;
+  }
+  .h_sec_4 .a {
+    order: 1;
+  }
+  .h_sec_4 .b {
+    order: 2;
+  }
+  .h_sec_4 .c {
+    order: 3;
+  }
+  .h_sec_4 .d {
+    order: 4;
+  }
+  .h_sec_4 .e {
+    order: 5;
+  }
+  .h_sec_4 .f {
+    order: 6;
+  }
+  .h_sec_4 .g {
+    order: 7;
+  }
+  .h_sec_4 .h {
+    order: 8;
+  }
+}
+@media (min-width: 1200px) {
+}

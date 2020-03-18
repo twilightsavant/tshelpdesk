@@ -1,0 +1,41 @@
+.loggedInComps {
+  padding: 40px 0px;
+}
+.loggedInComps .mobile_no {
+  display: none;
+}
+
+.loggedInComps .rightBar .titleDiv {
+  border-bottom: 1px solid #cccccc;
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 20px;
+}
+.loggedInComps .rightBar .titleDiv span {
+  padding-right: 10px;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+  .loggedInComps .centerContainer {
+    display: flex;
+  }
+
+  .loggedInComps .mobile_no {
+    display: unset;
+  }
+  .loggedInComps .leftBar {
+    flex: 0 1 25%;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+  }
+  .loggedInComps .rightBar {
+    flex: 1 1;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 1200px) {
+}

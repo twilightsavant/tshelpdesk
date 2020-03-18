@@ -1,0 +1,20 @@
+.saveTicketScreen input,
+.saveTicketScreen textarea,
+.saveTicketScreen select {
+  width: 100%;
+}
+.saveTicketScreen textarea {
+  height: 300px;
+}
+.saveTicketScreen .inputDesc {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.saveTicketScreen .inputSpacer {
+  padding-top: 20px;
+}
+.leftBar_saveTicket li {
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+}

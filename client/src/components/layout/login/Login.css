@@ -1,0 +1,80 @@
+.loginPage .centerContainer {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+}
+
+.loginPage .login_box {
+  flex: 0 1 500px;
+}
+
+.loginPage .titleDiv {
+  border-bottom: 1px solid #cccccc;
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 30px;
+}
+.loginPage .titleDiv span {
+  padding-right: 10px;
+}
+.loginPage .emailDiv {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.loginPage .passwordDiv {
+  font-size: 14px;
+  font-weight: bold;
+}
+.loginPage input {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5px;
+}
+.loginPage .actionBtns {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.loginPage #loginButton {
+  background: #337ab7;
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid #2e6da4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loginPage #loginButton:hover {
+  background: #2c71ac;
+}
+.loginPage .getStarted {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.loginPage .getStartedBtn {
+  background: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.loginPage .getStartedBtn:hover {
+  background: #c9dae9;
+}
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

@@ -1,0 +1,68 @@
+.loggedInComps .viewTickets_table {
+  border-spacing: 0px;
+}
+.loggedInComps .viewTickets_table td {
+  padding: 5px;
+}
+.loggedInComps .viewTickets_table thead td {
+  border-bottom: 3px solid green;
+  padding: 10px 5px;
+  background: #e6e6e6;
+}
+
+.loggedInComps .viewTickets_table td.subject_head {
+  width: 60%;
+}
+
+.loggedInComps .viewTickets_table tbody td,
+.loggedInComps .viewTickets_table tbody th {
+  border-bottom: 1px solid #999;
+}
+
+.loggedInComps .viewTickets_table tbody tr:nth-child(even) {
+  background: #f8fcfd;
+}
+
+.loggedInComps .viewTickets_table td.updated_head,
+.loggedInComps .viewTickets_table td.updated {
+  text-align: right;
+}
+
+.loggedInComps .viewTickets_table td.subject {
+  border-right: 1px solid #ccc;
+  font-size: 12px;
+}
+.loggedInComps .viewTickets_table td.subject[viewed='1'] {
+  background: url('viewTicket_Table_new.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.loggedInComps .viewTickets_table td.subject h1 {
+  margin: 0px 0px 5px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.loggedInComps .viewTickets_table td.subject h1:hover {
+  color: blue;
+}
+
+.loggedInComps .viewTickets_table td.priority,
+.loggedInComps .viewTickets_table td.priority_head,
+.loggedInComps .viewTickets_table td.status_head {
+  text-align: center;
+}
+.loggedInComps .viewTickets_table td.status .statusDiv {
+  padding: 5px;
+  height: 100%;
+  border: 1px solid #999;
+  text-align: center;
+  font-size: 13px;
+}
+.loggedInComps .viewTickets_table td.status .statusDiv:hover {
+  background: #d8e5f8;
+  cursor: pointer;
+}
+.loggedInComps .viewTickets_table td.status .statusDiv.answered {
+  background: #ccffcc;
+}

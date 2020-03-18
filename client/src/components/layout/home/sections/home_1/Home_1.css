@@ -1,0 +1,152 @@
+.h_sec_1 {
+  width: 100%;
+  background-image: url('./bgPix.jpg');
+  background-repeat: repeat;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}
+
+.h_sec_1 .bgDiv {
+}
+
+.h_sec_1 .content {
+  text-align: center;
+  color: white;
+  padding: 45px 0px;
+}
+.h_sec_1 img {
+  max-width: 250px;
+  height: auto;
+  padding-bottom: 30px;
+}
+.h_sec_1 h2 {
+  color: #b4b7b9;
+  margin: 0px;
+  font-size: 26px;
+}
+.h_sec_1 h3 {
+  color: #727272;
+  margin: 0px;
+  font-size: 34px;
+}
+.h_sec_1 h4 {
+  color: #949697;
+  margin: 0px;
+  font-size: 26px;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  .h_sec_1 {
+    height: 340px;
+  }
+  .h_sec_1 img {
+    max-width: 150px;
+    height: auto;
+    padding-right: 10px;
+    padding-bottom: 0px;
+  }
+  .h_sec_1 .bgDiv {
+    background-size: auto 280px;
+    display: flex;
+    justify-content: right;
+    padding-top: 0px;
+    background-image: url('./bgPic.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 350px;
+    background-position: bottom right;
+    height: 100%;
+  }
+  .h_sec_1 .content {
+    text-align: left;
+    align-self: center;
+    justify-self: left;
+    background: none;
+    color: black;
+    padding: 0px;
+    border: none;
+    flex: 1;
+    display: flex;
+  }
+  .h_sec_1 h2 {
+    color: #b4b7b9;
+    font-size: 26px;
+  }
+  .h_sec_1 h3 {
+    color: #727272;
+  }
+  .h_sec_1 h4 {
+    color: #949697;
+    font-size: 30px;
+  }
+
+  .h_sec_1 h2,
+  .h_sec_1 h4 {
+    font-size: 26px;
+  }
+  .h_sec_1 h3 {
+    font-size: 26px;
+  }
+}
+@media (min-width: 992px) {
+  .h_sec_1 {
+    height: 410px;
+  }
+  .h_sec_1 img {
+    max-width: 250px;
+    height: auto;
+  }
+  .h_sec_1 .bgDiv {
+    background-size: auto 400px;
+  }
+  .h_sec_1 h2,
+  .h_sec_1 h4 {
+    font-size: 26px;
+  }
+  .h_sec_1 h3 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .h_sec_1 {
+    height: 520px;
+  }
+  .h_sec_1 img {
+    max-width: 300px;
+    height: auto;
+  }
+  .h_sec_1 .bgDiv {
+    background-size: auto 480px;
+  }
+  .h_sec_1 h2,
+  .h_sec_1 h4 {
+    font-size: 30px;
+  }
+  .h_sec_1 h3 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .h_sec_1 {
+    height: 620px;
+  }
+  .h_sec_1 img {
+    max-width: 100%;
+    height: auto;
+  }
+  .h_sec_1 .bgDiv {
+    background-size: auto;
+  }
+  .h_sec_1 .centerContainer {
+    max-width: 1500px;
+  }
+  .h_sec_1 h2,
+  .h_sec_1 h4 {
+    font-size: 34px;
+  }
+  .h_sec_1 h3 {
+    font-size: 46px;
+  }
+}

@@ -1,0 +1,55 @@
+.loggedInComps .viewTicket .origTicket,
+.loggedInComps .viewTicket .replyTicket,
+.loggedInComps .viewTicket .commentOnTicket {
+  border: 1px solid #f5f5f5;
+  margin-bottom: 20px;
+}
+.loggedInComps .viewTicket .tic_header {
+  background: #f5f5f5;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.loggedInComps .viewTicket .ticAvatar {
+  flex: 0 1 50px;
+}
+.loggedInComps .viewTicket .ticUser {
+  flex: 2;
+}
+.loggedInComps .viewTicket .ticDate {
+  flex: 0 1 20%;
+  text-align: right;
+}
+.loggedInComps .viewTicket .tic_header h4 {
+  margin: 0px;
+}
+.loggedInComps .viewTicket .tic_body {
+  padding: 10px;
+}
+.loggedInComps .ticketTitleDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.loggedInComps .edit_ticket_btn {
+  background: #62b865;
+  border-radius: 5px;
+  border: 1px solid #53ae56;
+  align-self: flex-start;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
+  font-weight: normal;
+}
+.loggedInComps .edit_ticket_btn:hover {
+  background: #53ae56;
+}
+
+/* POST COMMENT STYLES */
+.loggedInComps .viewTicket .commentOnTicket .tic_header {
+  display: block;
+}
+.loggedInComps .viewTicket .commentOnTicket textarea {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+}

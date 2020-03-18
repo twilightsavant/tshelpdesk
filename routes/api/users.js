@@ -7,7 +7,7 @@ const User = require('../../models/User');
 const config = require('config');
 const auth = require('../../middleware/auth');
 
-router.get('/', (req, res) => res.send('User API Route'));
+//router.get('/', (req, res) => res.send('User API Route'));
 
 //@Route api/users
 //@Desc Register a new user
@@ -130,9 +130,8 @@ router.put(
   }
 );
 
-/*
 //@Route api/users
-//@Desc Get User Data
+//@Desc Get Current User Data without password
 //@Access Private
 router.get('/', auth, async (req, res) => {
   try {
@@ -142,6 +141,5 @@ router.get('/', auth, async (req, res) => {
     res.status(500).send('Server error');
   }
 });
-*/
 
 module.exports = router;

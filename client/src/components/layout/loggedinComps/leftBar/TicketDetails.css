@@ -1,0 +1,19 @@
+.leftBar_TicketDetails li h1 {
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px 0px 5px 0px;
+}
+
+.leftBar_TicketDetails li h2 {
+  font-size: 13px;
+  padding: 0px;
+  margin: 10px 0px 5px 0px;
+  color: #666;
+}
+
+.leftBar_TicketDetails li .closedStatus {
+  border: 1px solid #888;
+  background: #ccc;
+  padding: 2px 5px;
+  font-size: 12px;
+}
