@@ -24,16 +24,6 @@ const NavBar_Links = ({ auth: { isAuthenticated, loading }, logout }) => {
           </Link>
         </li>
         <li>
-          <Link to='/settings' className='color_main'>
-            SETTINGS
-          </Link>
-        </li>
-        <li>
-          <Link to='/contact' className='color_main'>
-            CONTACT
-          </Link>
-        </li>
-        <li>
           <a href='#!' onClick={logout}>
             LOGOUT
           </a>
@@ -58,11 +48,6 @@ const NavBar_Links = ({ auth: { isAuthenticated, loading }, logout }) => {
         <li>
           <Link to='/register' className='color_main'>
             REGISTER
-          </Link>
-        </li>
-        <li>
-          <Link to='/contact' className='color_main'>
-            CONTACT
           </Link>
         </li>
       </ul>

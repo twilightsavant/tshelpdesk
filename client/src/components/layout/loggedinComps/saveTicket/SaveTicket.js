@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; //History variable comes from here
 
@@ -11,6 +12,7 @@ import './../loggedIn.css';
 import './SaveTicket.css';
 
 const SaveTicket = ({
+  auth,
   tickets: { loading, viewTicket },
   saveTicket,
   setAlert,
@@ -36,6 +38,18 @@ const SaveTicket = ({
       priority: loading || !viewTicket.priority ? '' : viewTicket.priority
     });
   }, [loading, viewTicketGet, match.params.id]);
+
+  //Security Check & Compliance check for editing of a ticket
+  if (!loading) {
+    if (auth.user._id !== viewTicket.user) {
+      return <Redirect to='/viewTickets' />;
+    }
+
+    //compliance check, no editing if there are comments
+    if (viewTicket.comments && viewTicket.comments.length > 0) {
+      return <Redirect to='/viewTickets' />;
+    }
+  }
 
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -68,7 +82,7 @@ const SaveTicket = ({
           <div className='leftBar'>
             <div className='outer_box_rad leftBar_saveTicket'>
               <div className='titleDiv'>
-                <i className='far fa-user'></i> Your Info
+                <i className='far fa-user'></i> Edit Ticket Options
               </div>
               <div className='contDiv'>
                 {loading ? (
@@ -106,7 +120,7 @@ const SaveTicket = ({
                 )}
               </div>
 
-              <div className='btn' onClick={e => onSubmit(e)}>
+              <div className='btn save' onClick={e => onSubmit(e)}>
                 <i className='far fa-save'></i> Save Ticket
               </div>
             </div>
@@ -150,11 +164,13 @@ const SaveTicket = ({
 };
 
 SaveTicket.propTypes = {
+  auth: PropTypes.object.isRequired,
   tickets: PropTypes.object.isRequired,
   saveTicket: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
+  auth: state.auth,
   tickets: state.tickets
 });
 

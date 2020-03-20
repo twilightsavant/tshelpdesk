@@ -139,7 +139,6 @@ const ViewedByMe = (viewedBy, auth) => {
 };
 
 const Status = (answered, closed) => {
-  console.log(answered);
   if (closed) {
     return <div className='statusDiv closed'>Closed</div>;
   } else if (answered) {

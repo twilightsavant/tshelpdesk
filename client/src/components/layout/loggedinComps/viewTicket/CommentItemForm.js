@@ -6,6 +6,8 @@ import { addCommentToTicket } from '../../../../actions/tickets';
 
 const CommentItemForm = ({ ticketID, addCommentToTicket }) => {
   const [comment, setComment] = useState('');
+  const [closed, setClosed] = useState(false);
+
   return (
     <div className='commentOnTicket'>
       <div className='tic_header textleft font14 bold'>Leave a Response</div>
@@ -14,7 +16,7 @@ const CommentItemForm = ({ ticketID, addCommentToTicket }) => {
           className='commentForm'
           onSubmit={e => {
             e.preventDefault();
-            addCommentToTicket(ticketID, { comment });
+            addCommentToTicket(ticketID, { comment, closed });
             setComment('');
           }}
         >
@@ -25,6 +27,16 @@ const CommentItemForm = ({ ticketID, addCommentToTicket }) => {
             required
             onChange={e => setComment(e.target.value)}
           ></textarea>
+          <br />
+          <div style={{ marginBottom: '20px' }}>
+            <input
+              name='closed'
+              type='checkbox'
+              value='1'
+              onClick={e => setClosed(e.target.checked)}
+            />{' '}
+            Close this ticket, with this answer
+          </div>
           <input type='submit' value='Submit' />
         </form>
       </div>

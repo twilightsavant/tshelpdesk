@@ -37,24 +37,6 @@ const SideDrawer_Links = ({
           </Link>
         </li>
         <li>
-          <Link
-            to='/settings'
-            className='color_main'
-            onClick={e => closeNavBar()}
-          >
-            SETTINGS
-          </Link>
-        </li>
-        <li>
-          <Link
-            to='/contact'
-            className='color_main'
-            onClick={e => closeNavBar()}
-          >
-            CONTACT
-          </Link>
-        </li>
-        <li>
           <a href='#!' onClick={logout}>
             LOGOUT
           </a>
@@ -78,11 +60,6 @@ const SideDrawer_Links = ({
       <li>
         <Link to='/register' onClick={e => closeNavBar()}>
           REGISTER
-        </Link>
-      </li>
-      <li>
-        <Link to='/contact' onClick={e => closeNavBar()}>
-          CONTACT
         </Link>
       </li>
     </ul>

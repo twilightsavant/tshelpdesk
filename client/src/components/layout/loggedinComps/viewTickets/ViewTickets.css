@@ -66,3 +66,6 @@
 .loggedInComps .viewTickets_table td.status .statusDiv.answered {
   background: #ccffcc;
 }
+.loggedInComps .viewTickets_table td.status .statusDiv.closed {
+  background: #898989;
+}

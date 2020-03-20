@@ -230,6 +230,15 @@ body {
   padding-left: 15px;
 }
 
+.notFound404Div {
+  padding: 40px 15px;
+}
+
+.notFound404Div img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (min-width: 576px) {
   .centerContainer {
     max-width: 540px;

@@ -8,6 +8,7 @@ import ViewTickets from '../layout/loggedinComps/viewTickets/ViewTickets';
 import ViewTicket from '../layout/loggedinComps/viewTicket/ViewTicket';
 import SaveTicket from '../layout/loggedinComps/saveTicket/SaveTicket';
 import NewTicket from '../layout/loggedinComps/newTicket/NewTicket';
+import NotFound from '../layout/notFound/NotFound';
 
 const Routes = props => {
   return (
@@ -19,6 +20,7 @@ const Routes = props => {
         <PrivateRoute path='/viewticket/:id' component={ViewTicket} />
         <PrivateRoute path='/newticket' component={NewTicket} />
         <PrivateRoute path='/editticket/:id' component={SaveTicket} />
+        <Route component={NotFound} />
       </Switch>
     </Fragment>
   );

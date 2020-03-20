@@ -1,11 +1,11 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; //History variable comes from here
 
 import Spinner from '../../Spinner';
 import { setAlert } from '../../../../actions/alert';
-import { saveTicket, viewTicketGet } from '../../../../actions/tickets';
+import { saveTicket } from '../../../../actions/tickets';
 
 import './../loggedIn.css';
 import './NewTicket.css';
@@ -47,7 +47,7 @@ const SaveTicket = ({ saveTicket, setAlert, history }) => {
           <div className='leftBar'>
             <div className='outer_box_rad leftBar_saveTicket'>
               <div className='titleDiv'>
-                <i className='far fa-user'></i> Your Info
+                <i className='far fa-user'></i> New Ticket Options
               </div>
               <div className='contDiv'>
                 {loading ? (
@@ -85,7 +85,7 @@ const SaveTicket = ({ saveTicket, setAlert, history }) => {
                 )}
               </div>
 
-              <div className='btn' onClick={e => onSubmit(e)}>
+              <div className='btn save' onClick={e => onSubmit(e)}>
                 <i className='far fa-save'></i> Save Ticket
               </div>
             </div>

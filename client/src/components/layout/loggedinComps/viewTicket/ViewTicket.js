@@ -20,9 +20,10 @@ const ViewTicket = ({
   useEffect(() => {
     viewTicketGet(match.params.id);
   }, [viewTicketGet, match.params.id]);
+
   return (
     <div className='loggedInComps'>
-      <div className='centerContainer'>
+      <div className='centerContainer flexColumn'>
         <div className='leftBar'>
           <TicketDetails />
         </div>
@@ -38,16 +39,6 @@ const ViewTicket = ({
                   <span className='color_blue font24 bold'>View Ticket</span>
                   Help Desk Ticket
                 </div>
-                {auth.user._id === viewTicket.user && (
-                  <div
-                    className='edit_ticket_btn'
-                    onClick={e =>
-                      (window.location.href = `/editticket/${match.params.id}`)
-                    }
-                  >
-                    <i className='fas fa-wrench'> </i> Edit Your Help Ticket
-                  </div>
-                )}
               </div>
               <div className='viewTicket'>
                 <div className='origTicket'>
@@ -71,7 +62,11 @@ const ViewTicket = ({
                       </Moment>
                     </div>
                   </div>
-                  <div className='tic_body'>{viewTicket.subject}</div>
+                  <div className='tic_body'>
+                    <div className='bold'>Subject: {viewTicket.subject}</div>
+                    <br />
+                    {viewTicket.message}
+                  </div>
                 </div>
                 {typeof viewTicket.comments != 'undefined' &&
                   viewTicket.comments.map(com => {

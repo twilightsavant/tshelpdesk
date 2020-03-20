@@ -64,7 +64,7 @@ router.post(
 
     if (user) {
       //const ticketID = req.params.id;
-      const { comment } = req.body;
+      const { comment, closed } = req.body;
       const ticket = await Tickets.findOne({ _id: req.params.id });
       if (ticket.locked) {
         return res.status(500).send('Server Error');
@@ -86,6 +86,9 @@ router.post(
       } else {
         ticket.answered = true;
       }
+
+      //close ticket if requested
+      ticket.closed = closed;
 
       await ticket.save();
 
@@ -145,22 +148,22 @@ router.get('/statusSummary', auth, async (req, res) => {
   };
 
   try {
-    let ticket = await Tickets.countDocuments({ closed: false }, function(
-      err,
-      count
-    ) {
-      payload.open = count;
-    });
+    let ticket = await Tickets.countDocuments(
+      { closed: { $in: [null, false] } },
+      function(err, count) {
+        payload.open = count;
+      }
+    );
 
     ticket = await Tickets.countDocuments(
-      { answered: 'true', closed: false },
+      { answered: true, closed: { $in: [null, false] } },
       function(err, count) {
         payload.answered = count;
       }
     );
 
     ticket = await Tickets.countDocuments(
-      { answered: 'false', closed: false },
+      { answered: { $in: [null, false] }, closed: { $in: [null, false] } },
       function(err, count) {
         payload.notAnswered = count;
       }

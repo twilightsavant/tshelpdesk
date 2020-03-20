@@ -18,10 +18,14 @@ export const saveTicket = (ticketID, formData, history) => async dispatch => {
     //add the ticketID if given into the formData
     ticketID.length > 0 && (formData.ticketID = ticketID);
 
-    const res = await axios.post('/api/tickets/', formData, config);
+    await axios.post('/api/tickets/', formData, config);
     dispatch(setAlert('Ticket Saved Successfully', 'success'));
 
-    history.push('/viewtickets'); //client redirect through the history object
+    if (ticketID) {
+      history.push(`/viewticket/${ticketID}`);
+    } else {
+      history.push('/viewtickets/');
+    }
   } catch (err) {
     dispatch({
       type: SET_ALERT,

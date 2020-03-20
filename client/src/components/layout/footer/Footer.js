@@ -2,25 +2,41 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { logout } from '../../../actions/auth';
 import './Footer.css';
 
 import footerlogo from './footerlogo.png';
 
-const Footer = ({ auth: { isAuthenticated, loading } }) => {
+const Footer = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
-      <li>HOME</li>
-      <li>VIEW TICKETS</li>
-      <li>LOGOUT </li>
-      <li>CONTACT US</li>
+      <li>
+        <Link to='/'>HOME</Link>
+      </li>
+      <li>
+        <Link to='/newticket'>NEW TICKET</Link>
+      </li>
+      <li>
+        <Link to='/viewtickets'>VIEW TICKETS</Link>
+      </li>
+      <li>
+        <a href='#!' onClick={logout}>
+          LOGOUT
+        </a>
+      </li>
     </ul>
   );
   const guestLinks = (
     <ul>
-      <li>HOME</li>
-      <li>LOGIN</li>
-      <li>REGISTER</li>
-      <li>CONTACT US</li>
+      <li>
+        <Link to='/'>HOME</Link>
+      </li>
+      <li>
+        <Link to='/login'>LOGIN</Link>
+      </li>
+      <li>
+        <Link to='/register'>REGISTER</Link>
+      </li>
     </ul>
   );
 
@@ -53,11 +69,12 @@ const Footer = ({ auth: { isAuthenticated, loading } }) => {
 };
 
 Footer.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, {})(Footer);
+export default connect(mapStateToProps, { logout })(Footer);

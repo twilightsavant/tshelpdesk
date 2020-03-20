@@ -6,7 +6,8 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  ACCOUNT_DELETED
+  ACCOUNT_DELETED,
+  GET_PROFILE
 } from '../actions/types';
 
 const initialState = {
@@ -23,6 +24,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
+        loading: false,
+        user: payload
+      };
+    case GET_PROFILE:
+      return {
+        ...state,
         loading: false,
         user: payload
       };

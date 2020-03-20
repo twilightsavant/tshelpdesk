@@ -6,21 +6,27 @@ import Moment from 'react-moment';
 import Spinner from '../../Spinner';
 import './TicketDetails.css';
 
-const TicketDetails = ({ tickets: { loading, viewTicket } }) => {
+const TicketDetails = ({ auth, tickets: { loading, viewTicket } }) => {
   return (
     <div className='outer_box_rad leftBar_TicketDetails'>
       <div className='titleDiv'>
         <i className='fas fa-ticket-alt'></i> Ticket Infomration
       </div>
-      <div className='contDiv'>
-        {loading ? (
-          <Spinner />
-        ) : (
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className='contDiv'>
           <ul>
             <li>
               <h1>{viewTicket.subject}</h1>
-              <span className='closedStatus'>
-                {viewTicket.closed ? 'closed' : 'open'}
+              <span
+                className={
+                  viewTicket.closed
+                    ? 'closedStatus closed'
+                    : 'closedStatus open'
+                }
+              >
+                {viewTicket.closed ? 'Ticket Closed' : 'Ticket Open'}
               </span>
             </li>
             <li>
@@ -52,10 +58,46 @@ const TicketDetails = ({ tickets: { loading, viewTicket } }) => {
               <Priority num={viewTicket.priority} />
             </li>
           </ul>
-        )}
-      </div>
+        </div>
+      )}
+      {showEditButton(auth, viewTicket)}
     </div>
   );
+};
+
+/*
+{auth.user._id === viewTicket.user && viewTicket.comments == null && (
+  <div
+    className='btn edit'
+    onClick={e =>
+      (window.location.href = `/editticket/${viewTicket._id}`)
+    }
+    style={{ marginTop: '20px' }}
+  >
+    <i className='fas fa-wrench'> </i> Edit Your Help Ticket
+  </div>
+)}
+*/
+
+const showEditButton = (auth, viewTicket) => {
+  if (auth.user._id === viewTicket.user) {
+    if (viewTicket.comments && viewTicket.comments.length > 0) {
+      //there are comments
+    } else {
+      return (
+        <div
+          className='btn edit'
+          onClick={e =>
+            (window.location.href = `/editticket/${viewTicket._id}`)
+          }
+          style={{ marginTop: '20px' }}
+        >
+          <i className='fas fa-wrench'> </i> Edit Your Help Ticket
+        </div>
+      );
+    }
+  }
+  return '';
 };
 
 const Priority = ({ num }) => {
@@ -69,10 +111,12 @@ const Priority = ({ num }) => {
 };
 
 TicketDetails.propTypes = {
-  tickets: PropTypes.object.isRequired
+  tickets: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
+  auth: state.auth,
   tickets: state.tickets
 });
 

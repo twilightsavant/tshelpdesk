@@ -13,17 +13,28 @@
   padding: 10px 15px;
 }
 .outer_box_rad .btn {
-  color: white;
-  background: #62b865;
   border-radius: 5px;
-  border: 1px solid #53ae56;
   padding: 5px 15px;
   text-align: center;
   cursor: pointer;
   margin: 0px 10px 10px 10px;
 }
-.outer_box_rad .btn:hover {
+
+.outer_box_rad .btn.save {
+  color: white;
+  background: #62b865;
+  border: 1px solid #53ae56;
+}
+.outer_box_rad .btn.save:hover {
   background: #53ae56;
+}
+.outer_box_rad .btn.edit {
+  color: black;
+  background: #dbdbdb;
+  border: 1px solid #c5c5c5;
+}
+.outer_box_rad .btn.edit:hover {
+  background: #c5c5c5;
 }
 .outer_box_rad ul {
   list-style: none;
@@ -37,4 +48,12 @@
 }
 .outer_box_rad li:last-child {
   border: none;
+}
+
+.outer_box_rad .editYourInfo_inputDesc {
+  margin-bottom: 5px;
+}
+.outer_box_rad .editYourInfo_input {
+  width: 100%;
+  margin-bottom: 10px;
 }

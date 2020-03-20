@@ -2,23 +2,23 @@ footer {
   background: rgb(80, 79, 79); /* Old browsers */
   background: -moz-linear-gradient(
     left,
-    rgb(80, 79, 79) 0%,
-    rgb(31, 31, 31) 37%,
-    rgb(31, 31, 31) 37%
+    rgb(160, 160, 160) 0%,
+    rgb(91, 91, 91) 37%,
+    rgb(91, 91, 91) 37%
   ); /* FF3.6-15 */
   background: -webkit-linear-gradient(
     left,
-    rgb(80, 79, 79) 0%,
-    rgb(31, 31, 31) 37%,
-    rgb(31, 31, 31) 37%
+    rgb(160, 160, 160) 0%,
+    rgb(91, 91, 91) 37%,
+    rgb(91, 91, 91) 37%
   ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to right,
-    rgb(80, 79, 79) 0%,
-    rgb(31, 31, 31) 37%,
-    rgb(31, 31, 31) 37%
+    rgb(160, 160, 160) 0%,
+    rgb(91, 91, 91) 37%,
+    rgb(91, 91, 91) 37%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#504f4f', endColorstr='#1f1f1f',GradientType=1 ); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5B5B5B', endColorstr='#A0A0A0',GradientType=1 ); /* IE6-9 */
 }
 footer .centerContainer {
   color: white;
@@ -49,6 +49,13 @@ footer ul {
 footer li {
   margin-bottom: 10px;
   color: white;
+}
+footer li a {
+  text-decoration: none;
+  color: white;
+}
+footer li a:hover {
+  color: #dbdbdb;
 }
 footer h2,
 footer h3 {

@@ -10,7 +10,51 @@ const auth = require('../../middleware/auth');
 //router.get('/', (req, res) => res.send('User API Route'));
 
 //@Route api/users
-//@Desc Register a new user
+//@Desc Update a users info
+//@Access Public
+router.post(
+  '/yourInfo',
+  [
+    check('name', 'Name is required')
+      .not()
+      .isEmpty(),
+    check('email', 'Please include a valid email').isEmail()
+  ],
+  auth,
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { name, email, position, department, cellphone } = req.body;
+    try {
+      // See if user exists
+      const user = await User.findById(req.user.id).select('-password');
+
+      if (user) {
+        //good to UPDATE
+        user.name = name;
+        user.email = email;
+        user.position = position;
+        user.department = department;
+        user.cellphone = cellphone;
+
+        await user.save();
+
+        return res.json(user);
+      } else {
+        return res.status(500).send('Server Error');
+      }
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  }
+);
+
+//@Route api/users
+//@Desc Register a NEW user
 //@Access Public
 router.post(
   '/',
@@ -89,13 +133,7 @@ router.put(
       check('name', 'Name is required')
         .not()
         .isEmpty(),
-      check('email', 'Please include a valid email').isEmail(),
-      check('department', 'Department is required')
-        .not()
-        .isEmpty(),
-      check('position', 'Position is required')
-        .not()
-        .isEmpty()
+      check('email', 'Please include a valid email').isEmail()
     ]
   ],
   async (req, res) => {
